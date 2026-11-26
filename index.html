@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeLab 编程实验室</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="CodeLab 首页"><span class="logo">⌘</span> CodeLab <small>编程实验室</small></a>
+    <nav><a href="#learn">学习路线</a><a href="#practice">动手练习</a><a href="#quiz">知识闯关</a></nav>
+    <button id="resetProgress" class="text-button">重置进度</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">从零开始 · 边学边做</p>
+        <h1>把编程知识，<br><span>变成能运行的作品。</span></h1>
+        <p class="hero-copy">每天花一点时间，学习一个概念，亲手写几行代码，再用小测验检查理解。</p>
+        <a class="primary-button" href="#learn">开始今天的学习 <span>→</span></a>
+      </div>
+      <div class="hero-card">
+        <div class="window-dots"><i></i><i></i><i></i><b>index.html</b></div>
+        <pre><code><span class="code-purple">&lt;h1&gt;</span>你好，世界！<span class="code-purple">&lt;/h1&gt;</span>
+<span class="code-green">&lt;p&gt;</span>我的第一个网页。<span class="code-green">&lt;/p&gt;</span></code></pre>
+        <div class="mini-preview"><strong>你好，世界！</strong><p>我的第一个网页。</p></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><strong id="completedCount">0</strong><span>已完成课程</span></div>
+      <div><strong id="streakCount">0</strong><span>连续学习天数</span></div>
+      <div class="progress-stat"><div class="progress-label"><span>HTML 入门进度</span><b id="progressPercent">0%</b></div><div class="progress-track"><i id="progressBar"></i></div></div>
+    </section>
+
+    <section id="learn" class="section">
+      <div class="section-heading"><div><p class="eyebrow">YOUR ROADMAP</p><h2>学习路线</h2></div><p>按顺序学习，不用急着跳到后面。</p></div>
+      <div class="roadmap">
+        <article class="lesson-card active">
+          <div class="lesson-icon html-icon">5</div><div class="lesson-info"><span class="tag">当前阶段 · 初学者</span><h3>HTML：搭建网页骨架</h3><p>认识标签、标题、段落、链接、图片和页面结构。</p><div class="lesson-bottom"><span>6 个小主题</span><button class="small-button" data-lesson="html">进入学习</button></div></div>
+        </article>
+        <article class="lesson-card locked"><div class="lesson-icon css-icon">✦</div><div class="lesson-info"><span class="tag muted-tag">下一阶段</span><h3>CSS：设计网页外观</h3><p>学习颜色、字体、间距、盒子模型和页面布局。</p><div class="lesson-bottom"><span>完成 HTML 后继续</span><span class="lock">🔒</span></div></div></article>
+        <article class="lesson-card locked"><div class="lesson-icon js-icon">JS</div><div class="lesson-info"><span class="tag muted-tag">后续阶段</span><h3>JavaScript：让网页互动</h3><p>学习变量、条件、事件和简单的页面交互。</p><div class="lesson-bottom"><span>循序渐进</span><span class="lock">🔒</span></div></div></article>
+      </div>
+    </section>
+
+    <section id="practice" class="section practice-section">
+      <div class="section-heading"><div><p class="eyebrow">PLAYGROUND</p><h2>动手练习</h2></div><p>修改左边的代码，右边会实时显示结果。</p></div>
+      <div class="playground">
+        <div class="editor-panel">
+          <div class="panel-title"><span><i class="live-dot"></i> HTML 编辑区</span><button id="restoreCode" class="text-button">恢复示例</button></div>
+          <textarea id="codeEditor" spellcheck="false" aria-label="HTML代码编辑区"><h1>我的小网页</h1>
+<p>我正在学习 HTML！</p>
+<button>这是一个按钮</button></textarea>
+          <div class="editor-hint">提示：试着把标题改成你喜欢的文字。</div>
+        </div>
+        <div class="preview-panel">
+          <div class="panel-title"><span>网页预览</span><span class="preview-label">LIVE PREVIEW</span></div>
+          <iframe id="preview" title="网页实时预览" sandbox="allow-same-origin"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="section quiz-section">
+      <div class="section-heading"><div><p class="eyebrow">QUICK CHECK</p><h2>知识闯关</h2></div><p>答对后会记录本次练习完成情况。</p></div>
+      <div class="quiz-card">
+        <div class="quiz-number">01 / HTML 基础</div>
+        <h3>HTML 中，哪个标签通常用来表示一段普通文字？</h3>
+        <div class="answers">
+          <button class="answer" data-answer="a"><b>A</b> &lt;h1&gt;</button>
+          <button class="answer" data-answer="b"><b>B</b> &lt;p&gt;</button>
+          <button class="answer" data-answer="c"><b>C</b> &lt;img&gt;</button>
+        </div>
+        <p id="quizFeedback" class="feedback" aria-live="polite">选择一个答案，看看你是否掌握了这个知识点。</p>
+        <button id="nextQuiz" class="primary-button hidden">再练一道 <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="finish-banner">
+      <div><p class="eyebrow">SMALL STEPS, REAL PROGRESS</p><h2>今天学会一点，<br>明天就能多做一点。</h2><p>完成一个小练习，比只看完一大段教程更有价值。</p></div>
+      <a href="#practice" class="secondary-button">继续练习 →</a>
+    </section>
+  </main>
+  <footer><span>⌘ CodeLab 编程实验室</span><span>学习进度保存在当前浏览器中</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
